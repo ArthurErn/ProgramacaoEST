@@ -1,1 +1,3 @@
-# ProgramacaoEST
+# Introdução a Programação Estruturada
+
+# Exercícios
