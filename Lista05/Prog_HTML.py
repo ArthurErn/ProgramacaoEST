@@ -42,5 +42,5 @@ htmlString = '''
 </body>
 </html>'''
 
-with open("C:\\Users\\laris\\Desktop\\Larissa\\2° semestre\\Larissa - Listas\\L5\\Prog_HTML.html", 'w') as html:
+with open("C:\\Users\\User\\Documents\\GitHub\\ProgramacaoEST\\Lista05\\Prog_HTML.html", 'w') as html:
     html.write(htmlString)
