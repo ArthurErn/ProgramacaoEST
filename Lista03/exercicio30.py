@@ -5,36 +5,52 @@
 # • a media geral;
 # • a maior e a menor media da turma
 
-nota = []
+alunos = int(input("Digite a quantidade de alunos na sala: "))
+provas = int(input("Digite a quantidade de provas aplicadas: "))
 
-print('====== Bem-vindo ao cálculo de notas ======')
+maiorNota = ''
+alunoMaiorNota = ''
 
-while True:
-    
-    nota.append(float(input('Insira sua nota: ')))
-    
-    perg = input('Qual nota deseja saber? ou digite 0 para continuar: ')
-    
-    if perg == '0':
-        continue
-    elif perg == '1':
-        mediaInd = (nota[0] + nota[1]) / 2
-        print(f'Sua média individual é: {mediaInd}')
-    elif perg == '2':
-        mediaAll = sum(nota) / len(nota)
-        print(f'A média geral é: {mediaAll}')
-    elif perg == '3':
-        print(f'A maior média da turma é: {max(notas)}')
-        print(f'A menor média da turma é: {min(notas)}')
-    elif perg == '4':
-        mediaInd = (nota[0] + nota[1]) / 2
-        mediaAll = sum(nota) / len(nota)
-        print(f'Sua média individual é: {mediaInd}')
-        print(f'A média geral é: {mediaAll}')
-        print(f'A maior média da turma é: {max(nota)}')
-        print(f'A menor média da turma é: {min(nota)}')
-        
+menorNota = ''
+alunoMenorNota = ''
 
-        
-    
-    
+somaNotas = 0
+notaGeral = []
+
+for aluno in range(alunos):
+  
+  nomeAluno = str(input("Digite o nome do aluno: "))
+
+  notas = 0
+
+  for nota in range(notas):
+    nota = float(input("Digite a nota da prova: "))
+    notas += notas
+  
+  media = notas / provas
+
+  if(maiorNota == ''):
+    maiorNota = media
+    maiorNotaAluno = nomeAluno
+  elif(media > maiorNota):
+    maiorNota = media
+    maiorNotaAluno = nomeAluno
+  if(menorNota == ''):
+    menorNota = media
+    menorNotaAluno = nomeAluno
+  elif(media < menorNota):
+    menorNota = media
+    menorNotaAluno = nomeAluno
+
+  print(f"{nomeAluno} nota final: {round(media, 2)}")
+  notaGeral.append(media)
+  somaNotas += media
+
+print("Média de todos os alunos: ", notaGeral)
+
+print(f"Maior média: {maiorNotaAluno}, {maiorNota}")
+print(f"Menor média: {alunoMenorNota}, {menorNota}")
+
+mediaGeralAluno = somaNotas / alunos
+
+print(f"A média final da turma foi: {round(mediaGeralAluno, 2)}")
